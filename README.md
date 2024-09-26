@@ -12,8 +12,6 @@ This repository provides a guide to deploying a PACS DICOM system using Orthanc 
   - [Step 3: Keycloak Setup](#step-3-keycloak-setup)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
