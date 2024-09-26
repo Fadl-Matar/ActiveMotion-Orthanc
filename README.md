@@ -1,7 +1,3 @@
-# ActiveMotion-Orthanc
-Here’s an extended README file that builds upon your existing content:
-
----
 
 # ActiveMotion-Orthanc
 
