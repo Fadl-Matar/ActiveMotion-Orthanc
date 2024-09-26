@@ -24,20 +24,6 @@ This project aims to provide a complete solution for deploying your own DICOM sy
 - **OHIF Viewer**: Web-based DICOM viewer that integrates seamlessly with Orthanc.
 - **Keycloak**: Identity and access management system to secure your infrastructure.
 
-## Requirements
-
-Before starting the deployment, ensure you have the following:
-
-- Docker and Docker Compose installed
-- Basic knowledge of managing servers and containers
-- Access to a machine or cloud instance (e.g., AWS, GCP, Azure, etc.)
-- Administrative privileges for configuration and setup
-
-### Software Versions:
-- **Orthanc**: vX.X.X
-- **OHIF Viewer**: vX.X.X
-- **Keycloak**: vX.X.X
-
 ## Architecture Overview
 
 The system consists of three primary components:
@@ -47,9 +33,6 @@ The system consists of three primary components:
 3. **Keycloak**: Provides secure user authentication and access control, managing which users have access to the DICOM system.
 
 These components communicate via APIs and protocols (such as DICOMweb), ensuring interoperability and easy deployment.
-
-![Architecture Diagram](link_to_architecture_diagram)  
-*(Insert a diagram of your architecture here, if applicable)*
 
 ## Deployment Guide
 
