@@ -5,7 +5,6 @@ This repository provides a guide to deploying a PACS DICOM system using Orthanc 
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Requirements](#requirements)
 - [Architecture Overview](#architecture-overview)
 - [Deployment Guide](#deployment-guide)
   - [Step 1: Orthanc Setup](#step-1-orthanc-setup)
