@@ -125,16 +125,3 @@ Once the deployment is complete:
 1. Upload DICOM files to Orthanc via the web interface or API.
 2. View the uploaded images in the OHIF Viewer.
 3. Secure access through Keycloak, allowing authorized users to view and manage the DICOM images.
-
-## Contributing
-
-Contributions are welcome! Feel free to submit issues, fork the repo, or open pull requests to improve the guide or add additional features.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
-
----
-
-This version of the README file provides a clear, detailed guide for setting up the PACS DICOM system, ensuring users can follow along and deploy the system themselves. You can also add more detailed steps or expand on certain sections as needed.
-
