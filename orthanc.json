@@ -1,0 +1,43 @@
+{
+    "Name": "Orthanc",
+    "OrthancExplorer2": {
+      "IsDefaultUI": true,
+      "UiOptions": {
+        "EnableShares": true,
+        "DefaultShareDuration": 0,
+        "ShareDurations": [0, 7, 15, 30, 90, 365],
+        "EnableOpenInOhifViewer3": true,
+        "OhifViewer3PublicRoot": "http://localhost/ohif/"
+      },
+      "Tokens" : {
+        "InstantLinksValidity": 3600,
+        "ShareType": "ohif-viewer-publication"
+      },
+      "Keycloak" : {
+        "Enable": true,
+        "Url": "http://localhost/keycloak",
+        "Realm": "orthanc",
+        "ClientId": "orthanc"
+      }
+    },
+    "AuthenticationEnabled": false,     // because it is handled by the authorization plugin
+    "Authorization": {
+      "Enable": true,
+      "WebServiceRootUrl": "http://orthanc-auth-service:8000/",
+      "WebServiceUsername": "admin",
+      "WebServicePassword": "admin",
+      "StandardConfigurations" : [
+        "osimis-web-viewer",
+        "stone-webviewer",
+        "orthanc-explorer-2",
+        "ohif"
+      ],
+      "TokenHttpHeaders" : [ "api-key" ],
+      "CheckedLevel": "studies"
+    },
+
+    "DicomWeb": {
+      "Enable": true,
+      "PublicRoot": "/orthanc/dicom-web/"
+    }
+  }
