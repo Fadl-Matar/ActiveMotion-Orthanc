@@ -1,6 +1,3 @@
-Here's the updated README with the **Contributing** and **License** sections removed:
-
----
 
 # ActiveMotion-Orthanc
 
@@ -81,6 +78,3 @@ Once the deployment is complete:
 2. View the uploaded images in the OHIF Viewer.
 3. Secure access through Keycloak, allowing authorized users to view and manage the DICOM images.
 
----
-
-This streamlined version removes the "Contributing" and "License" sections while retaining the core content. Let me know if you need any other adjustments!
