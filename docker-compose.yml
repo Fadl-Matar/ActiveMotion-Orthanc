@@ -1,0 +1,84 @@
+version: "3.6"
+services:
+  orthanc:
+    image: orthancteam/orthanc:24.7.1
+    container_name: orthanc
+    restart: unless-stopped
+    depends_on: [keycloak]
+    ports:
+    - 8042:8042
+    - 4242:4242
+    volumes:
+    - /etc/orthanc/orthanc.json:/etc/orthanc/orthanc.json
+    - /etc/orthanc/orthanc.key:/etc/orthanc/orthanc.key
+    - /etc/orthanc/orthanc.crt:/etc/orthanc/orthanc.crt
+    - /etc/orthanc/activemotion.svg:/etc/orthanc/activemotion.svg
+    - /etc/orthanc/activemotion.png:/etc/orthanc/activemotion.png
+    - /etc/orthanc/active-motion-logo-black.svg:/etc/orthanc/active-motion-logo-black.svg
+    - orthanc-db:/var/lib/orthanc/db-v6
+    env_file:
+    - /etc/orthanc/.env
+    environment:
+    VERBOSE_ENABLED: "true"
+    VERBOSE_STARTUP: "true"
+  
+  orthanc-auth-service:
+    image: orthancteam/orthanc-auth-service:24.7.1
+    container_name: auth
+    volumes:
+    - /etc/orthanc/permissions.json:/orthanc_auth_service/permissions.json
+    depends_on: [keycloak]
+    restart: unless-stopped
+    environment:
+    SECRET_KEY: ${SECRET_KEY}
+    ENABLE_KEYCLOAK: "true"
+    KEYCLOAK_URI: ${KEYCLOAK_URI}
+    KEYCLOAK_ADMIN_URI: ${KEYCLOAK_ADMIN_URI}
+    KEYCLOAK_CLIENT_SECRET: ${KEYCLOAK_CLIENT_SECRET}
+    PUBLIC_ORTHANC_ROOT: ${PUBLIC_ORTHANC_ROOT}
+    PUBLIC_LANDING_ROOT: ${PUBLIC_LANDING_ROOT}
+    PUBLIC_OHIF_ROOT: ${PUBLIC_OHIF_ROOT}
+    USERS: | 
+      ${USERS}
+
+  ohif:
+    image: orthancteam/ohif-v3:24.7.1
+    container_name: ohif
+    volumes:
+    - /etc/orthanc/app-config.js:/usr/share/nginx/html/app-config.js
+    restart: unless-stopped
+    ports:
+    - 3000:80
+
+  ohif-links:
+    image: ohif/app:v3.9.0-beta.80
+    container_name: ohif-links
+    volumes:
+    - /etc/orthanc/app-config-links.js:/usr/share/nginx/html/app-config.js
+    restart: unless-stopped
+    ports:
+    - 3002:80
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0.1
+    container_name: keycloak
+    restart: unless-stopped
+    ports:
+    - 8080:8080
+    environment:
+    KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+    KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+    KC_HOSTNAME: ${KC_HOSTNAME}
+    KC_HOSTNAME_URL: ${KC_HOSTNAME_URL}
+    KC_HOSTNAME_ADMIN_URL: ${KC_HOSTNAME_ADMIN_URL}
+    KC_HOSTNAME_STRICT: false
+    KC_PROXY: edge
+    PROXY_ADDRESS_FORWARDING: true
+    KC_HTTP_RELATIVE_PATH: /keycloak
+    command:
+    - start
+    volumes:
+    - keycloak-volume:/opt/keycloak/data
+    - ./keycloak/providers:/opt/keycloak/providers
+  volumes:
+    orthanc-db:
+    keycloak-volume:
