@@ -42,7 +42,7 @@ These components communicate via APIs and protocols (such as DICOMweb), ensuring
 
    ```bash
    SECRET_KEY=your_secret_key
-   KEYCLOAK_URI=http://localhost:8080/auth
+   KEYCLOAK_URI=http://localhost:8080/
    KEYCLOAK_ADMIN=admin
    KEYCLOAK_ADMIN_PASSWORD=your_admin_password
    ```
