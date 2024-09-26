@@ -31,6 +31,8 @@ The system consists of three primary components:
 
 These components communicate via APIs and protocols (such as DICOMweb), ensuring interoperability and easy deployment.
 
+For the sake of this deployment we will we doing it via `localhost`
+
 ## Deployment Guide
 
 ### Step 1: Orthanc Setup
