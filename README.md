@@ -37,7 +37,7 @@ These components communicate via APIs and protocols (such as DICOMweb), ensuring
 
 2. **Environment Variables**: Ensure that you have set the required environment variables for services like Keycloak and Orthanc in a `.env` file. The required variables include:
 
-   ```bash
+```bash
 SECRET_KEY=ECC38B9B265CC51BE795A234E75AE
 KEYCLOAK_CLIENT_SECRET=mG0byxP4b251X9nCDnvdg4hVdF7C5vqo
 POSTGRES_PASSWORD=keycloak
