@@ -10,11 +10,11 @@ services:
     - 4242:4242
     volumes:
     - /etc/orthanc/orthanc.json:/etc/orthanc/orthanc.json
-    - /etc/orthanc/orthanc.key:/etc/orthanc/orthanc.key
-    - /etc/orthanc/orthanc.crt:/etc/orthanc/orthanc.crt
-    - /etc/orthanc/activemotion.svg:/etc/orthanc/activemotion.svg
-    - /etc/orthanc/activemotion.png:/etc/orthanc/activemotion.png
-    - /etc/orthanc/active-motion-logo-black.svg:/etc/orthanc/active-motion-logo-black.svg
+   // - /etc/orthanc/orthanc.key:/etc/orthanc/orthanc.key
+   // - /etc/orthanc/orthanc.crt:/etc/orthanc/orthanc.crt
+   // - /etc/orthanc/activemotion.svg:/etc/orthanc/activemotion.svg
+   // - /etc/orthanc/activemotion.png:/etc/orthanc/activemotion.png
+   // - /etc/orthanc/active-motion-logo-black.svg:/etc/orthanc/active-motion-logo-black.svg
     - orthanc-db:/var/lib/orthanc/db-v6
     env_file:
     - /etc/orthanc/.env
