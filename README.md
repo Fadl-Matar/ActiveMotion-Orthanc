@@ -38,10 +38,28 @@ These components communicate via APIs and protocols (such as DICOMweb), ensuring
 2. **Environment Variables**: Ensure that you have set the required environment variables for services like Keycloak and Orthanc in a `.env` file. The required variables include:
 
    ```bash
-   SECRET_KEY=your_secret_key
-   KEYCLOAK_URI=http://localhost:8080/
-   KEYCLOAK_ADMIN=admin
-   KEYCLOAK_ADMIN_PASSWORD=your_admin_password
+SECRET_KEY=ECC38B9B265CC51BE795A234E75AE
+KEYCLOAK_CLIENT_SECRET=mG0byxP4b251X9nCDnvdg4hVdF7C5vqo
+POSTGRES_PASSWORD=keycloak
+KC_DB_PASSWORD=keycloak
+KEYCLOAK_ADMIN_PASSWORD=admin
+
+# URLs
+KEYCLOAK_URI=https://active.kyz.dk/keycloak/realms/orthanc
+KEYCLOAK_ADMIN_URI=https://active.kyz.dk/keycloak/admin/orthanc
+PUBLIC_ORTHANC_ROOT=https://active.kyz.dk/orthanc/
+PUBLIC_LANDING_ROOT=https://active.kyz.dk/orthanc/ui/app/token-landing.html
+PUBLIC_OHIF_ROOT=https://active.kyz.dk/
+KC_HOSTNAME_URL=https://active.kyz.dk/keycloak
+KC_HOSTNAME_ADMIN_URL=https://active.kyz.dk/keycloak
+
+# Database User
+KC_DB_USERNAME=keycloak
+POSTGRES_USER=keycloak
+POSTGRES_DB=keycloak
+
+# Other Environment Variables
+KC_HOSTNAME=active.kyz.dk
    ```
 
 3. **Run the deployment**: In the directory containing the `docker-compose.yml` file, run the following command to start all services:
